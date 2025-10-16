@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Jackets</title>
+  <link rel="stylesheet" href="jackets.css">
+</head>
+<body>
+  <header>
+    <h1>🧥 Jackets Collection</h1>
+    <nav>
+      <a href="cart.html" class="cart-link">🛒 Cart</a>
+    </nav>
+  </header>
+
+  <!-- Product Grid -->
+  <section class="products">
+    <div class="product" data-title="Men’s Autumn/Winter Contrast Color Thickened Warm Hooded Padded Coat" data-price="$49" data-img="jacket1.png">
+      <img src="jacket1.png" alt="Men’s Autumn/Winter Coat">
+      <h3>Men’s Autumn/Winter Coat</h3>
+      <p class="price">$49</p>
+    </div>
+
+    <div class="product" data-title="Men’s Lightweight Puffer Jacket Insulated Water-Resistant Outdoor Winter Down" data-price="$70" data-img="jacket2.png">
+      <img src="jacket2.png" alt="Lightweight Puffer Jacket">
+      <h3>Lightweight Puffer Jacket</h3>
+      <p class="price">$70</p>
+    </div>
+  </section>
+
+  <div class="coming-soon">
+    <p>✨ More products coming soon...</p>
+  </div>
+
+  <!-- Popup Modal -->
+  <div id="popup" class="popup">
+    <div class="popup-content">
+      <span class="close" id="close-btn">✖</span>
+      <img id="popup-img" class="popup-img" alt="Product preview">
+      <h2 id="popup-title"></h2>
+      <p id="popup-price" class="popup-price"></p>
+
+      <form id="buy-form" class="buy-form">
+        <label for="size">Choose Size:</label>
+        <select id="size" required>
+          <option value="">-- Select Size --</option>
+          <option value="S">Small (S)</option>
+          <option value="M">Medium (M)</option>
+          <option value="L">Large (L)</option>
+          <option value="XL">Extra Large (XL)</option>
+          <option value="XXL">2X Large (XXL)</option>
+        </select>
+
+        <label for="qty">Quantity:</label>
+        <input type="number" id="qty" min="1" value="1" required>
+
+        <button type="submit" class="btn">Add to Cart</button>
+      </form>
+    </div>
+  </div>
+
+  <script src="jackets.js"></script>
+</body>
+</html>

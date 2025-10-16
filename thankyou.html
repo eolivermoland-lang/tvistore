@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Checkout</title>
+  <link rel="stylesheet" href="thankyou.css">
+</head>
+<body>
+  <header>
+    <h1>💳 Secure Checkout</h1>
+  </header>
+
+  <main>
+    <h2 id="checkout-total">Total to Pay: $0</h2>
+    <div id="paypal-button-container"></div>
+  </main>
+
+  <!-- PayPal SDK: bytt DIN_CLIENT_ID med din egen fra PayPal Developer -->
+  <script src="https://www.paypal.com/sdk/js?client-id=ATTduLsIfc1QrNzifEo8HWlBBE-dACHhiPCScWNBpmMckzzUie4EMgXaS1mB_H1-Ttcsny8pzXFlnzvV&currency=USD"></script>
+  <script src="thankyou.js"></script>
+</body>
+</html>
