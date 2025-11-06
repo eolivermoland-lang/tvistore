@@ -1,0 +1,144 @@
+/* ===== FARGER OG STANDARDINNSTILLINGER ===== */
+:root {
+  --bg: #0f1115;          /* Mørk bakgrunnsfarge for hele siden */
+  --card: #161a22;        /* Litt lysere mørk farge for kort/elementer */
+  --stroke: #232836;      /* Kantlinjer og grenser */
+  --text: #e8ecf1;        /* Lys tekstfarge */
+  --muted: #9aa3b2;       /* Grå, brukt på mindre viktig tekst */
+  --accent: #2ecc71;      /* Grønn aksentfarge for trygghet og SSL */
+}
+
+/* Fjerner mellomrom og sørger for at alt måler likt */
+* {
+  box-sizing: border-box;
+}
+
+html, body {
+  height: 100%;
+}
+
+/* ===== GRUNNLEGGENDE UTSEENDE ===== */
+body {
+  margin: 0;
+  font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+  background:
+    /* Litt grønn lysning i bakgrunnen */
+    radial-gradient(1200px 600px at 20% -10%, rgba(46, 204, 113, .08), transparent 40%),
+    /* Blå gradient som gir litt liv */
+    radial-gradient(800px 400px at 100% 0%, rgba(0, 150, 255, .06), transparent 45%),
+    var(--bg);
+  color: var(--text);
+}
+
+/* ===== HOVEDRAMME RUNDT ALT ===== */
+.checkout-shell {
+  max-width: 980px;        /* Maks bredde så alt ser sentrert og ryddig ut */
+  margin: 28px auto 64px;  /* Plasserer midt på siden med luft over/under */
+  padding: 0 20px;
+}
+
+/* ===== TOPPLINJEN ("Secure Checkout") ===== */
+.checkout-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  background: linear-gradient(180deg, rgba(255, 255, 255, .02), rgba(255, 255, 255, 0));
+  border: 1px solid var(--stroke);
+  border-radius: 14px;
+  padding: 14px 18px;
+  backdrop-filter: blur(6px);  /* Gir en glass-effekt */
+  box-shadow:
+    0 8px 30px rgba(0, 0, 0, .25),      /* Ytre skygge */
+    inset 0 1px 0 rgba(255, 255, 255, .04); /* Lys kant øverst */
+}
+
+/* ===== VENSTRE SIDE AV HEADER ===== */
+.ch-left {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+/* Låsikonets utseende */
+.lock {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 28px;
+  height: 28px;
+  border-radius: 8px;
+  background: rgba(46, 204, 113, .12);
+  color: var(--accent);
+  border: 1px solid rgba(46, 204, 113, .35);
+}
+
+/* Teksten "Secure Checkout" */
+.title {
+  font-weight: 600;
+  letter-spacing: .3px;
+  font-size: 15px; /* Kompakt, ser mer profesjonelt ut enn stor H1 */
+}
+
+/* Liten grønn merkelapp med "SSL kryptert" */
+.badge {
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--accent);
+  background: rgba(46, 204, 113, .12);
+  border: 1px solid rgba(46, 204, 113, .35);
+  padding: 4px 8px;
+  border-radius: 999px; /* Gjør den helt rund i kantene */
+  text-transform: uppercase;
+  letter-spacing: .4px;
+}
+
+/* ===== HØYRE SIDE AV HEADER ===== */
+.ch-right {
+  display: flex;
+  align-items: baseline;
+  gap: 10px;
+}
+
+/* Grå "Total"-tekst */
+.ch-right .muted {
+  color: var(--muted);
+  font-size: 12px;
+  letter-spacing: .3px;
+  text-transform: uppercase;
+}
+
+/* Beløpet ($406.00 osv.) */
+.ch-right .amount {
+  font-variant-numeric: tabular-nums; /* Sikrer jevn justering av tall */
+  font-weight: 700;
+  font-size: 18px;
+}
+
+/* ===== HOVEDINNHOLD UNDER HEADER ===== */
+.checkout-main {
+  margin-top: 18px;
+  padding: 20px;
+  background: linear-gradient(180deg, rgba(255, 255, 255, .015), rgba(255, 255, 255, 0));
+  border: 1px solid var(--stroke);
+  border-radius: 14px;
+  min-height: 140px; /* Litt plass så det ikke ser tomt ut */
+  box-shadow:
+    0 6px 24px rgba(0, 0, 0, .18),
+    inset 0 1px 0 rgba(255, 255, 255, .03);
+}
+
+/* ===== RESPONSIVT DESIGN ===== */
+@media (max-width: 560px) {
+  .checkout-header {
+    padding: 12px 14px;
+  }
+
+  .title {
+    font-size: 14px;
+  }
+
+  .ch-right .amount {
+    font-size: 16px;
+  }
+}
